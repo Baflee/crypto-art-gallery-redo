@@ -154,9 +154,6 @@ namespace TiltBrush
                 return m_DerivedSkyboxMaterial;
             }
         }
-
-        public Color m_SkyboxColorA;
-        public Color m_SkyboxColorB;
     }
 
 } // namespace TiltBrush

@@ -103,6 +103,7 @@ namespace TiltBrush
             LabsMobile,
             ReferenceMobile,
             CameraPath,
+            CryptoPanel,
             BrushLab
         }
 

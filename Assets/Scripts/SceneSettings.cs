@@ -237,8 +237,6 @@ namespace TiltBrush
             {
                 if (m_CurrentEnvironment == null) { return false; }
                 bool skyboxChanged = (m_InGradient && m_CurrentEnvironment.m_RenderSettings.m_SkyboxCubemap != null) ||
-                    m_CurrentEnvironment.m_SkyboxColorA != m_SkyColorA ||
-                    m_CurrentEnvironment.m_SkyboxColorB != m_SkyColorB ||
                     m_GradientSkew != Quaternion.identity;
                 return skyboxChanged ||
                     m_CurrentEnvironment.m_RenderSettings.m_FogColor != RenderSettings.fogColor ||
@@ -302,14 +300,7 @@ namespace TiltBrush
             bool hasCustomGradient = custom.GradientColors != null;
             if (hasCustomGradient)
             {
-                m_SkyColorA = custom.GradientColors[0];
-                m_SkyColorB = custom.GradientColors[1];
                 m_GradientSkew = custom.GradientSkew;
-            }
-            else
-            {
-                m_SkyColorA = env.m_SkyboxColorA;
-                m_SkyColorB = env.m_SkyboxColorB;
             }
 
             // Set InGradient after the colors have been defined.  This call sends a message to all those
@@ -737,8 +728,6 @@ namespace TiltBrush
                     InGradient = (CurrentEnvironment == null) ? false :
                         (env.m_RenderSettings.m_SkyboxCubemap == null);
                     m_CustomFogColor = env.m_RenderSettings.m_FogColor;
-                    m_SkyColorA = env.m_SkyboxColorA;
-                    m_SkyColorB = env.m_SkyboxColorB;
                     m_GradientSkew = Quaternion.identity;
                 }
 

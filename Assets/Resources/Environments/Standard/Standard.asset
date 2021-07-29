@@ -26,7 +26,7 @@ MonoBehaviour:
     m_AmbientColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
     m_SkyboxExposure: 0.9
     m_SkyboxTint: {r: 0.23529412, g: 0.2509804, b: 0.3529412, a: 1}
-    m_EnvironmentPrefab: EnvironmentPrefabs/Standard
+    m_EnvironmentPrefab: 
     m_EnvironmentReverbZonePrefab: EnvironmentAudio/ReverbZone_CarpetedHallway
     m_SkyboxCubemap: {fileID: 0}
     m_ReflectionCubemap: {fileID: 8900000, guid: f83cc5a806898db42b092b6dbda6bd0d,
@@ -52,5 +52,3 @@ MonoBehaviour:
   m_TeleportBoundsHalfWidth: 80
   m_ControllerXRayHeight: 0
   m_WidgetHome: {x: 0, y: 0, z: 0}
-  m_SkyboxColorA: {r: 0.27450982, g: 0.27450982, b: 0.31764707, a: 1}
-  m_SkyboxColorB: {r: 0.03529412, g: 0.03529412, b: 0.08627451, a: 1}

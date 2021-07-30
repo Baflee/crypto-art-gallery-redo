@@ -92,7 +92,7 @@ namespace TiltBrush
         {
             RenderSettings.fog = src.m_FogEnabled;
             RenderSettings.fogColor = src.m_FogColor;
-            RenderSettings.fogDensity = src.m_FogDensity;
+            RenderSettings.fogDensity = 1;
             RenderSettings.fogStartDistance = src.m_FogStartDistance;
             RenderSettings.fogEndDistance = src.m_FogEndDistance;
             RenderSettings.fogMode = src.m_FogMode;
@@ -112,7 +112,7 @@ namespace TiltBrush
             RenderSettingsLite dst = new RenderSettingsLite();
             dst.m_FogEnabled = RenderSettings.fog;
             dst.m_FogColor = RenderSettings.fogColor;
-            dst.m_FogDensity = RenderSettings.fogDensity;
+            dst.m_FogDensity = RenderSettings.fogDensity = 1;
             dst.m_FogStartDistance = RenderSettings.fogStartDistance;
             dst.m_FogEndDistance = RenderSettings.fogEndDistance;
             dst.m_FogMode = RenderSettings.fogMode;

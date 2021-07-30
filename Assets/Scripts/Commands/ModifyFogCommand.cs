@@ -28,7 +28,6 @@ namespace TiltBrush
                                 BaseCommand parent = null) : base(parent)
         {
             m_StartColor = SceneSettings.m_Instance.FogColor;
-            m_StartDensity = SceneSettings.m_Instance.FogDensity;
             m_EndColor = endColor;
             m_EndDensity = endDensity;
             m_Final = final;
@@ -39,13 +38,11 @@ namespace TiltBrush
         override protected void OnUndo()
         {
             SceneSettings.m_Instance.FogColor = m_StartColor;
-            SceneSettings.m_Instance.FogDensity = m_StartDensity;
         }
 
         override protected void OnRedo()
         {
             SceneSettings.m_Instance.FogColor = m_EndColor;
-            SceneSettings.m_Instance.FogDensity = m_EndDensity;
         }
 
         override public bool Merge(BaseCommand other)

@@ -172,17 +172,6 @@ namespace TiltBrush
             }
         }
 
-        public float FogDensity
-        {
-            get { return m_CurrentValues.m_FogDensity; }
-            set
-            {
-                m_CurrentValues.m_FogDensity = value;
-                RenderSettings.fogDensity = value / App.Scene.Pose.scale;
-                TriggerFogDensityChanged();
-            }
-        }
-
         public bool InGradient
         {
             get { return RenderSettings.skybox != null && m_InGradient; }
@@ -240,7 +229,6 @@ namespace TiltBrush
                     m_GradientSkew != Quaternion.identity;
                 return skyboxChanged ||
                     m_CurrentEnvironment.m_RenderSettings.m_FogColor != RenderSettings.fogColor ||
-                    m_CurrentEnvironment.m_RenderSettings.m_FogDensity != FogDensity ||
                     m_CurrentEnvironment.m_RenderSettings.m_ReflectionIntensity != RenderSettings.reflectionIntensity;
             }
         }
@@ -378,8 +366,6 @@ namespace TiltBrush
             m_CurrentValues = m_InterimValues;
             m_InterimValues.m_FogEnabled = rDesired.m_FogEnabled;
             m_InterimValues.m_FogMode = rDesired.m_FogMode;
-            FogDensity = m_LoadingCustomEnvironment ? m_CustomFogDensity :
-                rDesired.m_FogDensity;
             RenderSettings.fogStartDistance = rDesired.m_FogStartDistance;
             RenderSettings.fogEndDistance = rDesired.m_FogEndDistance;
             m_TransitionValue = 0.0f;
@@ -519,7 +505,6 @@ namespace TiltBrush
             {
                 m_CurrentState = TransitionState.Scene;
                 m_CurrentValues = rDesired;
-                FogDensity = m_LoadingCustomEnvironment ? m_CustomFogDensity : rDesired.m_FogDensity;
                 if (RenderSettings.skybox)
                 {
                     RenderSettings.skybox.SetColor("_ColorA", m_SkyColorA);
@@ -592,11 +577,6 @@ namespace TiltBrush
                     // Update the state of lights and environment upon completion of fade to scene.
                     PanelManager.m_Instance.ExecuteOnPanel<LightsPanel>(x => x.Refresh());
                 }
-            }
-            else
-            {
-                // Refresh fog density based on scale.
-                FogDensity = FogDensity;
             }
 
             UpdateEnvironment();
@@ -708,7 +688,7 @@ namespace TiltBrush
                 m_SkipFade = true;
             }
             bool bEnvironmentModified =
-                LightsControlScript.m_Instance.LightsChanged || SceneSettings.m_Instance.EnvironmentChanged;
+                SceneSettings.m_Instance.EnvironmentChanged;
             if (env == null)
             {
                 Debug.Log("null environment");
@@ -795,7 +775,6 @@ namespace TiltBrush
                             new[] { (Color32)m_SkyColorA, (Color32)m_SkyColorB } : null,
                         GradientSkew = m_GradientSkew,
                         FogColor = (Color32)RenderSettings.fogColor,
-                        FogDensity = SceneSettings.m_Instance.FogDensity,
                         ReflectionIntensity = RenderSettings.reflectionIntensity
                     };
             }

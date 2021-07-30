@@ -14,17 +14,17 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogMode: 2
+  m_FogDensity: 1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.5441177, g: 0.36407876, b: 0.36407876, a: 1}
   m_AmbientEquatorColor: {r: 0.5441177, g: 0.36407876, b: 0.36407876, a: 1}
   m_AmbientGroundColor: {r: 0.007352948, g: 0.007352948, b: 0.007352948, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientIntensity: 0.35
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 747cc04299fde1e4e9f325a8db7551b1, type: 2}
   m_HaloStrength: 0.5
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 8900000, guid: 378efb751ea39e14cb1fd93f49ead278, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.688922, g: 1.1542737, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.063777484, g: 0.01553115, b: 0, a: 0.3}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1766,6 +1766,98 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1.3, y: 0.3}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &84780709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 84780710}
+  - component: {fileID: 84780711}
+  m_Layer: 0
+  m_Name: Sun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &84780710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84780709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.41312885, y: 52.034798, z: -0.17382526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1065755966}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &84780711
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84780709}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 0.42823532, g: 0.4211765, b: 0.3458824, a: 1}
+  m_Intensity: 1
+  m_Range: 5
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 1
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!4 &85296817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 25ba8134f2fcdc447aa836e22af16c68,
@@ -9346,6 +9438,7 @@ GameObject:
   - component: {fileID: 652605572}
   - component: {fileID: 652605564}
   - component: {fileID: 652605570}
+  - component: {fileID: 652605555}
   m_Layer: 0
   m_Name: App
   m_TagString: Untagged
@@ -9462,7 +9555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a00b29cc7f3b444a46cdc028248e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SkyboxMaterial: {fileID: 2100000, guid: 502c8257ef70e3f4b9f6b176302930e6, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_DefaultEnvironment: {fileID: 11400000, guid: 5effa9d950f0f5943b60c7dd24471505,
     type: 2}
 --- !u!114 &652605549
@@ -9480,7 +9573,7 @@ MonoBehaviour:
   m_TransitionSpeed: 2
   m_HardBoundsRadiusMeters_SS: 250
   m_ReflectionIntensityFallOff: 0.25
-  m_SkyboxMaterial: {fileID: 2100000, guid: e411a9a71b6ea7f46b87d0cb52f5ed4d, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 747cc04299fde1e4e9f325a8db7551b1, type: 2}
 --- !u!114 &652605550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9725,6 +9818,54 @@ MonoBehaviour:
   m_LightGizmoHintPrefab: {fileID: 1000013540523448, guid: 1d7ce18899f58da4daf4ec0457ca61eb,
     type: 3}
   m_LightGizmoHoverTimeBeforeHint: 3
+--- !u!114 &652605555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652605543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96c16503c4870d4a9d92973e37b66d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkyboxPano: {fileID: 2100000, guid: 747cc04299fde1e4e9f325a8db7551b1, type: 2}
+  Sun: {fileID: 84780709}
+  SceneSettings: {fileID: 652605549}
+  Jour: 24
+  PaletteJour:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  Matinee: {r: 0, g: 0, b: 0, a: 0}
+  Midi: {r: 0, g: 0, b: 0, a: 0}
+  Soiree: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &652605556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14203,6 +14344,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 84780710}
   - {fileID: 1815866265}
   m_Father: {fileID: 1370550523}
   m_RootOrder: 1
@@ -27321,7 +27463,6 @@ GameObject:
   - component: {fileID: 1796800575}
   - component: {fileID: 1796800577}
   - component: {fileID: 1796800571}
-  - component: {fileID: 1796800578}
   m_Layer: 0
   m_Name: SketchControls
   m_TagString: Untagged
@@ -27913,52 +28054,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DuplicateOffset: {x: 0.1, y: 1, z: 0.1}
---- !u!114 &1796800578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796800567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96c16503c4870d4a9d92973e37b66d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SkyboxPano: {fileID: 2100000, guid: 747cc04299fde1e4e9f325a8db7551b1, type: 2}
-  Jour: 0
-  PaletteJour:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  Matinee: {r: 0, g: 0, b: 0, a: 0}
-  Midi: {r: 0, g: 0, b: 0, a: 0}
-  Soiree: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1798914841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 54db8f5fcfbb46e44956444a27d43b5a,
@@ -28310,7 +28405,7 @@ Transform:
   m_Children:
   - {fileID: 2104863929}
   m_Father: {fileID: 1065755966}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1815866266
 MonoBehaviour:

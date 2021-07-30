@@ -81,10 +81,7 @@ namespace TiltBrush
                     popup.CustomColorPalette.ColorPicked += OnSkyColorBPickedAsFinal;
                     break;
                 case ColorMode.Fog:
-                    popup.ColorPicker.ColorPicked += OnFogColorPicked;
                     popup.ColorPicker.Controller.CurrentColor = SceneSettings.m_Instance.FogColor;
-                    popup.ColorPicker.ColorFinalized += FogColorFinalized;
-                    popup.CustomColorPalette.ColorPicked += OnFogColorPickedAsFinal;
                     break;
             }
         }
@@ -154,22 +151,5 @@ namespace TiltBrush
                 final: true));
         }
 
-        void OnFogColorPicked(Color color)
-        {
-            SketchMemoryScript.m_Instance.PerformAndRecordCommand(
-                new ModifyFogCommand(color, SceneSettings.m_Instance.FogDensity));
-        }
-
-        void FogColorFinalized()
-        {
-            SketchMemoryScript.m_Instance.PerformAndRecordCommand(new ModifyFogCommand(
-                SceneSettings.m_Instance.FogColor, SceneSettings.m_Instance.FogDensity, final: true));
-        }
-
-        void OnFogColorPickedAsFinal(Color color)
-        {
-            SketchMemoryScript.m_Instance.PerformAndRecordCommand(
-                new ModifyFogCommand(color, SceneSettings.m_Instance.FogDensity, final: true));
-        }
     }
 } // namespace TiltBrush

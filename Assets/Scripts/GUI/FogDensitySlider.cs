@@ -22,17 +22,6 @@ namespace TiltBrush
         [SerializeField] private Renderer m_FogDensity;
         [SerializeField] private float m_MaxFogDensity = 0.04f;
 
-        void OnEnable()
-        {
-            SceneSettings.m_Instance.FogDensityChanged += OnFogDensityChanged;
-        }
-
-        override protected void OnDestroy()
-        {
-            base.OnDestroy();
-            SceneSettings.m_Instance.FogDensityChanged -= OnFogDensityChanged;
-        }
-
         override public void UpdateValue(float value)
         {
             base.UpdateValue(value);
@@ -52,28 +41,7 @@ namespace TiltBrush
         override public void ButtonReleased()
         {
             base.ButtonReleased();
-            EndModifyCommand();
         }
 
-        override public void ResetState()
-        {
-            if (m_HadButtonPress)
-            {
-                EndModifyCommand();
-            }
-            base.ResetState();
-        }
-
-        void OnFogDensityChanged()
-        {
-            UpdateValue(SceneSettings.m_Instance.FogDensity / m_MaxFogDensity);
-        }
-
-        void EndModifyCommand()
-        {
-            SketchMemoryScript.m_Instance.PerformAndRecordCommand(
-                new ModifyFogCommand(SceneSettings.m_Instance.FogColor,
-                    SceneSettings.m_Instance.FogDensity, final: true));
-        }
     }
 } // namespace TiltBrush

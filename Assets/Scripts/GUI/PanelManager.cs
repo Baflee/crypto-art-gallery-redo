@@ -695,11 +695,6 @@ namespace TiltBrush
                     {
                         widget.ForceInvisibleForInit();
                     }
-                    else if (panel.m_Fixed || IsPanelCore(panel.Type))
-                    {
-                        // Prime panels that begin fixed.
-                        widget.ForceVisibleForInit();
-                    }
                 }
             }
 

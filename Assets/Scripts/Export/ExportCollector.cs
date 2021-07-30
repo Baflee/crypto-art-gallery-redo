@@ -184,7 +184,6 @@ namespace TiltBrush
             payload.env.skyColorB = settings.SkyColorB;
             payload.env.skyGradientDir = settings.GradientOrientation * Vector3.up;
             payload.env.fogColor = settings.FogColor;
-            payload.env.fogDensity = settings.FogDensity;
         }
 
         // -------------------------------------------------------------------------------------------- //

@@ -154,7 +154,6 @@ namespace TiltBrush
             // All changes must go through .Pose accessor
             if (transform.hasChanged)
             {
-                Debug.LogError("Detected unsanctioned change to transform");
                 transform.hasChanged = false;
             }
 #endif

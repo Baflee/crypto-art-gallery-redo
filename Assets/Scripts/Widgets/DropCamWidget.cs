@@ -464,7 +464,7 @@ namespace TiltBrush
                             {
                                 m_CircleRadians += (float)(Time.deltaTime * m_CircleSpeed * 2 * Math.PI);
                                 //transform.position = new Vector3(0,0, Mathf.Lerp(m_after, m_CircleRadians, m_CircleSmooth));
-                                Debug.Log("1" + i++);
+                                //Debug.Log("1" + i++);
                             }
                             //Debug.Log("1");
                             m_CircleReady = false;
@@ -474,7 +474,7 @@ namespace TiltBrush
                             {
                                 m_CircleRadians -= (float)(Time.deltaTime * m_CircleSpeed * 2 * Math.PI);
                                 //transform.position = new Vector3(0, 0, Mathf.Lerp(m_after, m_CircleRadians, m_CircleSmooth));
-                                Debug.Log("2" + i++);
+                                //Debug.Log("2" + i++);
                             }
                             //Debug.Log("2");
                             m_CircleReady = false;

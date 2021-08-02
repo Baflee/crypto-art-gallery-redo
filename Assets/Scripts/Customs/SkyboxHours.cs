@@ -9,21 +9,21 @@ namespace tiltbrush
         public Material SkyboxPano;
         public GameObject Sun;
         public TiltBrush.SceneSettings SceneSettings;
-        [Range(0f, 24f)]
+        [Range(0f, 86400f)]
         [SerializeField] public float Jour;
         public Gradient PaletteJour;
         GradientColorKey[] PaletteJourCouleur;
         GradientAlphaKey[] PaletteJourTransparent;
-        float H_Minuit = 24f;
-        float H_Midi = 12f;
+        float H_Minuit = 86400f;
+        float H_Midi = 43200f;
         float H_Matin = 0f;
         float h_MilieuMatin;
         float h_MilieuApresMidi;
         public Color Matinee;
         public Color Midi;
         public Color Soiree;
-        Color Journee;
         string timelog;
+        float test;
 
         void Start()
         {
@@ -33,8 +33,8 @@ namespace tiltbrush
             Midi = Color.HSVToRGB(colorvalue + 0.072f, 0.6f, 1f);
             Soiree = Color.HSVToRGB(colorvalue + 0.144f, 1f, 0.25f);
 
-            h_MilieuMatin = Random.Range(8f, 11f);
-            h_MilieuApresMidi = Random.Range(13f, 17f);
+            h_MilieuMatin = Random.Range(28800f, 39600f);
+            h_MilieuApresMidi = Random.Range(46800f, 61200f);
 
             PaletteJourCouleur = new GradientColorKey[3];
             PaletteJourCouleur[0].color = Matinee;
@@ -60,7 +60,11 @@ namespace tiltbrush
         void Update()
         {
             RenderSettings.skybox = SkyboxPano;
-            timelog = System.DateTime.UtcNow.ToLocalTime().ToString("HH:mm");
+            string heures = System.DateTime.UtcNow.ToLocalTime().ToString("HH");
+            string minutes = System.DateTime.UtcNow.ToLocalTime().ToString("mm");
+            string secondes = System.DateTime.UtcNow.ToLocalTime().ToString("ss");
+            //Jour = float.Parse(heures) * 3600 + float.Parse(minutes) * 60 + float.Parse(secondes);
+            Debug.Log(Jour);
             Weather();
 
         }

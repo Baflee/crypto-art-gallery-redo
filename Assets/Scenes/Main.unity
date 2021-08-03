@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 8900000, guid: 378efb751ea39e14cb1fd93f49ead278, type: 3}
   m_Sun: {fileID: 84780711}
-  m_IndirectSpecularColor: {r: 0.063777484, g: 0, b: 0.035584684, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.09770403, g: 0.19919565, b: 0.04543057, a: 0.3}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -9404,7 +9404,7 @@ GameObject:
   - component: {fileID: 642601186}
   - component: {fileID: 642601187}
   m_Layer: 0
-  m_Name: Lune
+  m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9418,7 +9418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642601185}
   m_LocalRotation: {x: 0.007439688, y: -0.374783, z: 0.92240316, w: -0.09303182}
-  m_LocalPosition: {x: 5.0018196, y: 14.750786, z: -4.7260647}
+  m_LocalPosition: {x: -155.8, y: 56.9, z: -54}
   m_LocalScale: {x: 0.01704, y: 0.01704, z: 0.017039998}
   m_Children: []
   m_Father: {fileID: 1065755966}
@@ -9925,6 +9925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkyboxPano: {fileID: 2100000, guid: 747cc04299fde1e4e9f325a8db7551b1, type: 2}
   Sun: {fileID: 84780709}
+  Moon: {fileID: 642601187}
   SceneSettings: {fileID: 652605549}
   Jour: 0
   PaletteJour:
